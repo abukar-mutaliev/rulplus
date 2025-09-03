@@ -1,6 +1,6 @@
-import { prisma } from '../config/prisma.js';
+const { prisma } = require('../config/prisma.js');
 
-export class DocumentService {
+class DocumentService {
   /**
    * Получить все документы
    */
@@ -335,3 +335,5 @@ export class DocumentService {
     }
   }
 }
+
+module.exports = { DocumentService };

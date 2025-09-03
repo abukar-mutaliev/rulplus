@@ -1,12 +1,14 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-// Импорт маршрутов
-import adminStatsRoutes from './routes/admin/adminStats.routes.js';
-import applicationRoutes from './routes/application.routes.js';
-import documentRoutes from './routes/documents.routes.js';
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const path = require('path');
 
-import { connectDatabase } from './config/database.js';
+// Импорт маршрутов
+const adminStatsRoutes = require('./routes/admin/adminStats.routes.js');
+const applicationRoutes = require('./routes/application.routes.js');
+const documentRoutes = require('./routes/documents.routes.js');
+
+const { connectDatabase } = require('./config/database.js');
 
 dotenv.config();
 
@@ -40,7 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Health check endpoint для Railway
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.status(200).json({
     status: 'ok',
     timestamp: new Date().toISOString(),
@@ -179,7 +181,15 @@ let servicesStore = {
 
 
 // Статические файлы React приложения
-app.use(express.static('public'));
+app.use('/', express.static(path.join(__dirname, '../../client/dist'), {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    } else if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+  }
+}));
 
 // Статические файлы с правильными MIME типами
 app.use('/uploads', express.static('uploads', {
@@ -740,7 +750,22 @@ app.use('/admin/stats', adminStatsRoutes);
 // Регистрация маршрутов для заявок на обучение
 app.use('/api/applications', applicationRoutes);
 
-// 404 handler
+// Fallback маршрут для React SPA - должен быть ПОСЛЕ всех API маршрутов, но ПЕРЕД 404
+app.get('*', (req, res) => {
+  // Проверяем, является ли запрос API запросом
+  if (req.path.startsWith('/api/') || req.path.startsWith('/admin/')) {
+    return res.status(404).json({
+      status: 'error',
+      message: `API маршрут ${req.originalUrl} не найден`,
+      code: 'API_NOT_FOUND'
+    });
+  }
+
+  // Для всех остальных запросов возвращаем React приложение
+  res.sendFile('index.html', { root: path.join(__dirname, '../../client/dist') });
+});
+
+// 404 handler для API маршрутов
 app.use((req, res) => {
   res.status(404).json({
     status: 'error',
@@ -820,12 +845,7 @@ process.on('SIGTERM', () => {
   }
 }
 
-// Fallback маршрут для React SPA - должен быть ПОСЛЕ всех API маршрутов
-app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: 'public' });
-});
-
 // Запуск сервера
 startServer();
 
-export default app; 
+module.exports = app; 

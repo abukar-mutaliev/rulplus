@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 
 // Создаем экземпляр Prisma Client
 const prisma = new PrismaClient({
@@ -10,4 +10,4 @@ process.on('beforeExit', async () => {
   await prisma.$disconnect();
 });
 
-export { prisma };
+module.exports = { prisma };

@@ -1,17 +1,10 @@
-import { Request, Response, NextFunction } from 'express';
-import { logger } from '../utils/logger.js';
+const { logger } = require('../utils/logger.js');
 
-export interface CustomError extends Error {
-  statusCode?: number;
-  status?: string;
-  isOperational?: boolean;
-}
-
-export const errorHandler = (
-  error: CustomError,
-  req: Request,
-  res: Response,
-  _next: NextFunction
+const errorHandler = (
+  error,
+  req,
+  res,
+  _next
 ) => {
   // Установка значений по умолчанию
   error.statusCode = error.statusCode || 500;
@@ -61,9 +54,11 @@ export const handleUnhandledRejection = () => {
 };
 
 // Обработчик для необработанных исключений
-export const handleUncaughtException = () => {
-  process.on('uncaughtException', (error: Error) => {
+const handleUncaughtException = () => {
+  process.on('uncaughtException', (error) => {
     logger.error('Необработанное исключение:', error);
     process.exit(1);
   });
-}; 
+};
+
+module.exports = { errorHandler, handleUncaughtException }; 

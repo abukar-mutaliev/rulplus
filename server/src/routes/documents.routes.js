@@ -1,8 +1,8 @@
-import express from 'express';
-import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
-import { DocumentService } from '../services/document.service.prisma.js';
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const { DocumentService } = require('../services/document.service.prisma.js');
 
 console.log('📊 Используем PostgreSQL + Prisma сервис документов');
 
@@ -332,4 +332,4 @@ router.get('/stats/overview', async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

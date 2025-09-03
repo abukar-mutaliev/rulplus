@@ -1,8 +1,8 @@
 {
   "watch": ["src"],
-  "ext": "js,json,ts",
-  "ignore": ["src/**/*.test.ts", "src/**/*.spec.ts", "node_modules"],
-  "exec": "node --import tsx src/server.js",
+  "ext": "js,json",
+  "ignore": ["src/**/*.test.js", "src/**/*.spec.js", "node_modules"],
+  "exec": "node src/server.js",
   "env": {
     "NODE_ENV": "development"
   },

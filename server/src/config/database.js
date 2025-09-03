@@ -1,15 +1,15 @@
-import { config } from './index.js';
-import { logger } from '../utils/logger.js';
+const { config } = require('./index.js');
+const { logger } = require('../utils/logger.js');
 
-export const connectDatabase = async () => {
+const connectDatabase = async () => {
   try {
-    console.log('🚀 PostgreSQL + Prisma режим');
-    console.log(`📍 Database URL: ${config.database.uri.replace(/:[^:]*@/, ':***@')}`);
+    logger.info('🚀 PostgreSQL + Prisma режим');
+    logger.info(`📍 Database URL: ${config.database.uri.replace(/:[^:]*@/, ':***@')}`);
 
     // Подключаемся к PostgreSQL через Prisma
-    const { prisma } = await import('./prisma.js');
+    const { prisma } = require('./prisma.js');
     await prisma.$connect();
-    console.log('✅ PostgreSQL подключена через Prisma!');
+    logger.info('✅ PostgreSQL подключена через Prisma!');
 
     // Ждем полной готовности соединения
     await new Promise((resolve, reject) => {
@@ -22,10 +22,10 @@ export const connectDatabase = async () => {
           // Проверяем соединение простым запросом
           await prisma.$queryRaw`SELECT 1`;
           clearTimeout(timeout);
-          console.log('✅ База данных полностью готова к работе!');
-          resolve();
+          logger.info('✅ База данных полностью готова к работе!');
+          resolve(true);
         } catch (error) {
-          console.log('⏳ Ожидание готовности базы данных...');
+          logger.info('⏳ Ожидание готовности базы данных...');
           setTimeout(checkConnection, 1000);
         }
       };
@@ -35,18 +35,17 @@ export const connectDatabase = async () => {
 
     // Graceful shutdown
     process.on('SIGINT', async () => {
-      console.log('🛑 Завершение работы...');
+      logger.info('🛑 Завершение работы...');
       const { prisma } = await import('./prisma.js');
       await prisma.$disconnect();
-      console.log('📴 PostgreSQL соединение закрыто');
+      logger.info('📴 PostgreSQL соединение закрыто');
       process.exit(0);
     });
 
-    return true;
-
   } catch (error) {
-    console.error('❌ Ошибка подключения к PostgreSQL:', error.message);
-    console.error('Stack trace:', error.stack);
+    logger.error('❌ Ошибка подключения к PostgreSQL:', error);
     process.exit(1);
   }
-}; 
+};
+
+module.exports = { connectDatabase }; 

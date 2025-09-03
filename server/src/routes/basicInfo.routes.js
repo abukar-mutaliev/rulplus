@@ -1,9 +1,9 @@
-import { Router } from 'express';
+const { Router } = require('express');
 
 const router = Router();
 
 // Временные заглушки для контроллеров
-const getBasicInfo = (_req: any, res: any) => {
+const getBasicInfo = (_req, res) => {
   res.json({
     status: 'success',
     data: {
@@ -15,11 +15,11 @@ const getBasicInfo = (_req: any, res: any) => {
   });
 };
 
-const updateBasicInfo = (_req: any, res: any) => {
+const updateBasicInfo = (_req, res) => {
   res.json({ status: 'success', message: 'Информация обновлена' });
 };
 
-const getBasicInfoHistory = (_req: any, res: any) => {
+const getBasicInfoHistory = (_req, res) => {
   res.json({ status: 'success', data: [] });
 };
 
@@ -44,4 +44,4 @@ router.put('/', updateBasicInfo);
  */
 router.get('/history', getBasicInfoHistory);
 
-export default router; 
+module.exports = router; 

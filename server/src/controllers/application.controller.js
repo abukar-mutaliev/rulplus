@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
 // Email configuration для Яндекс.Почты
 const createTransporter = () => {
@@ -176,4 +176,4 @@ const testEmailConfig = async (req, res) => {
   }
 };
 
-export { submitApplication, testEmailConfig }; 
+module.exports = { submitApplication, testEmailConfig }; 

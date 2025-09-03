@@ -108,7 +108,7 @@ const getMonthlyStats = async (req, res) => {
   }
 };
 
-export {
+module.exports = {
   getQuickStats,
   getDetailedStats,
   getMonthlyStats
