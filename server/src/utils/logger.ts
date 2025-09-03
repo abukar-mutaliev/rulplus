@@ -1,5 +1,5 @@
 import * as winston from 'winston';
-import * as DailyRotateFile from 'winston-daily-rotate-file';
+import DailyRotateFile = require('winston-daily-rotate-file');
 import { config } from '../config/index.js';
 
 // Формат логов
