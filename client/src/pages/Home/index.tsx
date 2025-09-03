@@ -366,20 +366,6 @@ const HomePage = () => {
                     transition: 'all 0.3s ease'
                   }}
                 >
-                  {program.category === 'B' && (
-                    <Chip
-                      label="ПОПУЛЯРНОЕ"
-                      color="primary"
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        zIndex: 1,
-                        fontWeight: 700,
-                        letterSpacing: '1px'
-                      }}
-                    />
-                  )}
                   <CardContent sx={{ p: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                       <Avatar sx={{ bgcolor: 'primary.main', mr: 2, width: 56, height: 56 }}>
