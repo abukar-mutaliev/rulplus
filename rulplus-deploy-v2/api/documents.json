@@ -1,0 +1,97 @@
+{
+  "status": "success",
+  "data": {
+    "charter": [
+      {
+        "id": 1,
+        "title": "Устав автошколы 'РУЛЬ+'",
+        "name": "Устав автошколы 'РУЛЬ+'",
+        "description": "Устав образовательной организации",
+        "fileUrl": "/api/uploads/charter.pdf",
+        "fileName": "charter.pdf",
+        "fileSize": "2.5 МБ",
+        "uploadDate": "2024-01-15",
+        "category": "charter",
+        "status": "active",
+        "expiryDate": null
+      }
+    ],
+    "license": [
+      {
+        "id": 2,
+        "title": "Лицензия на образовательную деятельность",
+        "name": "Лицензия на образовательную деятельность",
+        "description": "Лицензия на право ведения образовательной деятельности",
+        "fileUrl": "/api/uploads/license.pdf",
+        "fileName": "license.pdf",
+        "fileSize": "1.8 МБ",
+        "uploadDate": "2024-01-15",
+        "category": "license",
+        "status": "active",
+        "expiryDate": "2025-12-31"
+      }
+    ],
+    "accreditation": [
+      {
+        "id": 3,
+        "title": "Свидетельство о государственной аккредитации",
+        "name": "Свидетельство о государственной аккредитации",
+        "description": "Свидетельство о государственной аккредитации образовательной организации",
+        "fileUrl": "/api/uploads/accreditation.pdf",
+        "fileName": "accreditation.pdf",
+        "fileSize": "3.2 МБ",
+        "uploadDate": "2024-01-15",
+        "category": "accreditation",
+        "status": "active",
+        "expiryDate": "2026-06-30"
+      }
+    ],
+    "regulations": [
+      {
+        "id": 4,
+        "title": "Правила внутреннего распорядка",
+        "name": "Правила внутреннего распорядка",
+        "description": "Правила внутреннего распорядка обучающихся",
+        "fileUrl": "/api/uploads/regulations.pdf",
+        "fileName": "regulations.pdf",
+        "fileSize": "1.1 МБ",
+        "uploadDate": "2024-01-15",
+        "category": "regulations",
+        "status": "active",
+        "expiryDate": null
+      }
+    ],
+    "reports": [
+      {
+        "id": 5,
+        "title": "Отчет о результатах самообследования",
+        "name": "Отчет о результатах самообследования",
+        "description": "Отчет о результатах самообследования за 2023 год",
+        "fileUrl": "/api/uploads/report-2023.pdf",
+        "fileName": "report-2023.pdf",
+        "fileSize": "4.5 МБ",
+        "uploadDate": "2024-01-15",
+        "category": "reports",
+        "status": "active",
+        "expiryDate": null
+      }
+    ],
+    "collective": [
+      {
+        "id": 6,
+        "title": "Коллективный договор",
+        "name": "Коллективный договор",
+        "description": "Коллективный договор между работодателем и работниками",
+        "fileUrl": "/api/uploads/collective.pdf",
+        "fileName": "collective.pdf",
+        "fileSize": "2.8 МБ",
+        "uploadDate": "2024-01-15",
+        "category": "collective",
+        "status": "active",
+        "expiryDate": "2025-12-31"
+      }
+    ],
+    "prescriptions": [],
+    "lastUpdated": "2024-01-15"
+  }
+}

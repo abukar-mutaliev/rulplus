@@ -1,0 +1,56 @@
+{
+  "name": "driving-school-website",
+  "version": "1.0.0",
+  "description": "Сайт школы вождения с соответствием требованиям Рособрнадзора",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm run test",
+    "test:server": "cd server && npm run test",
+    "test:e2e": "cd client && npm run test:e2e",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "clean": "rimraf client/dist client/node_modules server/dist server/node_modules node_modules",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "type-check": "npm run type-check:client && npm run type-check:server",
+    "type-check:client": "cd client && npm run type-check",
+    "type-check:server": "cd server && npm run type-check"
+  },
+  "keywords": [
+    "driving-school",
+    "education",
+    "rosobrnadzor",
+    "react",
+    "typescript",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Development Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.5"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@tanstack/react-query-devtools": "^5.84.1",
+    "archiver": "^7.0.1"
+  }
+}

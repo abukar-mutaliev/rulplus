@@ -1,0 +1,2 @@
+import{a as t}from"./utils-4719f846.js";const s=t.create({baseURL:{}.VITE_API_URL||"http://localhost:5000",timeout:1e4}),e={getBasicInfo:async()=>{try{const a=await s.get("/api/info/basic");if(a.data.status==="success"&&a.data.data)return a.data.data;throw new Error(a.data.message||"Ошибка при получении данных")}catch(a){throw console.error("Ошибка API basicInfo.getBasicInfo:",a),a}}};export{e as b};
+//# sourceMappingURL=basicInfo-71b6cd77.js.map

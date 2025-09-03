@@ -1,0 +1,19 @@
+{
+  "watch": ["src"],
+  "ext": "js,json,ts",
+  "ignore": ["src/**/*.test.ts", "src/**/*.spec.ts", "node_modules"],
+  "exec": "node --import tsx src/server.js",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "delay": 500,
+  "verbose": true,
+  "restartable": "rs",
+  "colours": true,
+  "events": {
+    "start": "echo 🚀 Server starting...",
+    "restart": "echo 🔄 Server restarting due to changes...",
+    "crash": "echo 💥 Server crashed!",
+    "exit": "echo 👋 Server exited"
+  }
+}
