@@ -19,6 +19,8 @@
     "docker:build": "docker-compose build",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
+    "deploy": "chmod +x deploy.sh && ./deploy.sh",
+    "test:prod": "chmod +x test-production.sh && ./test-production.sh",
     "lint": "npm run lint:client && npm run lint:server",
     "lint:client": "cd client && npm run lint",
     "lint:server": "cd server && npm run lint",

@@ -23,7 +23,7 @@ export const connectDatabase = async (): Promise<void> => {
           await prisma.$queryRaw`SELECT 1`;
           clearTimeout(timeout);
           logger.info('✅ База данных полностью готова к работе!');
-          resolve();
+          resolve(true);
         } catch (error) {
           logger.info('⏳ Ожидание готовности базы данных...');
           setTimeout(checkConnection, 1000);

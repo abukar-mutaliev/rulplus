@@ -11,7 +11,7 @@ export const errorHandler = (
   error: CustomError,
   req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ) => {
   // Установка значений по умолчанию
   error.statusCode = error.statusCode || 500;
