@@ -178,6 +178,9 @@ let servicesStore = {
 
 
 
+// Статические файлы React приложения
+app.use(express.static('public'));
+
 // Статические файлы с правильными MIME типами
 app.use('/uploads', express.static('uploads', {
   setHeaders: (res, path) => {
@@ -816,6 +819,11 @@ process.on('SIGTERM', () => {
     process.exit(1);
   }
 }
+
+// Fallback маршрут для React SPA - должен быть ПОСЛЕ всех API маршрутов
+app.get('*', (req, res) => {
+  res.sendFile('index.html', { root: 'public' });
+});
 
 // Запуск сервера
 startServer();
