@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Typography, Box, Card, CardContent, Grid, Divider, CircularProgress, Alert } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
-import { Business, Phone, Email, LocationOn, Schedule, AccountBalance } from '@mui/icons-material';
+import { Business, Phone, Email, LocationOn, Schedule } from '@mui/icons-material';
 import { basicInfoApi, IBasicInfo } from '../../../shared/api/basicInfo';
 
 const BasicInfoPage = () => {
@@ -219,37 +219,6 @@ const BasicInfoPage = () => {
               </CardContent>
             </Card>
 
-            {/* Информация об учредителе */}
-            <Card>
-              <CardContent>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <AccountBalance sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="h6" component="h3">
-                    Учредитель
-                  </Typography>
-                </Box>
-
-                <Typography variant="body1" gutterBottom>
-                  <strong>{basicInfo.founder.name}</strong>
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary" gutterBottom>
-                  Адрес: {basicInfo.founder.address}
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary" gutterBottom>
-                  Телефон: {basicInfo.founder.phone}
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary" gutterBottom>
-                  Email: {basicInfo.founder.email}
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary">
-                  Сайт: {basicInfo.founder.website}
-                </Typography>
-              </CardContent>
-            </Card>
           </Grid>
         </Grid>
         {/* Дата обновления */}

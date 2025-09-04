@@ -162,7 +162,7 @@ export const Footer = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <Phone sx={{ fontSize: 20, color: 'grey.400' }} />
                 <Link
-                  href="tel:+74951234567"
+                  href="tel:+7 (988) 822-28-88"
                   color="inherit"
                   sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                 >
@@ -173,7 +173,7 @@ export const Footer = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <Email sx={{ fontSize: 20, color: 'grey.400' }} />
                 <Link
-                  href="mailto:info@driving-school.ru"
+                  href="mailto:rulplus@mail.ru"
                   color="inherit"
                   sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                 >

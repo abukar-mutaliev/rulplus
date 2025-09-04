@@ -49,37 +49,18 @@ app.get('/api/info/basic', (req, res) => {
     data: {
       fullName: 'Общество с ограниченной ответственностью "Автошкола Руль+"',
       shortName: 'ООО "Автошкола Руль+"',
-      foundedDate: '15 марта 2010 года',
-      legalAddress: '123456, г. Назрань, ул. Примерная, д. 123, оф. 45',
-      actualAddress: '123456, г. Назрань, ул. Примерная, д. 123, оф. 45',
-      phone: '+7 (495) 123-45-67',
-      email: 'info@driving-school.ru',
+      foundedDate: '1 августа 2025 года',
+      legalAddress: 'г. Назрань, пр-т. И. Базоркина, д. 28 В',
+      actualAddress: 'г. Назрань, пр-т. И. Базоркина, д. 28 В',
+      phone: '+7 (988) 822-28-88',
+      email: 'rulplus@mail.ru',
       website: 'https://driving-school.ru',
-      founder: {
-        name: 'Департамент образования и науки города Москвы',
-        address: '125032, г. Москва, ул. Тверская, д. 13',
-        phone: '+7 (495) 777-77-77',
-        email: 'info@educom.mos.ru',
-        website: 'https://www.mos.ru/donm/'
-      },
       workSchedule: {
         weekdays: 'Понедельник - Пятница: 09:00 - 18:00',
         saturday: 'Суббота: 10:00 - 16:00',
         sunday: 'Воскресенье: выходной',
         holidays: 'В праздничные дни по отдельному графику'
       },
-      branches: [
-        {
-          name: 'Филиал "Северный"',
-          address: '127015, г. Назрань, ул. Северная, д. 45',
-          phone: '+7 (495) 123-45-68'
-        },
-        {
-          name: 'Филиал "Южный"',
-          address: '115551, г. Назрань, ул. Южная, д. 78',
-          phone: '+7 (495) 123-45-69'
-        }
-      ],
       lastUpdated: new Date().toISOString()
     }
   });

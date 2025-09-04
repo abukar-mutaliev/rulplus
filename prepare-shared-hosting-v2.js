@@ -42,28 +42,11 @@ const basicInfo = {
         "brandName": "РУЛЬ+",
         "slogan": "СЕЛ — ПОЕХАЛ!",
         "foundedDate": "2020",
-        "legalAddress": "г. Назрань, ул. Московская, 1",
-        "actualAddress": "г. Назрань, ул. Московская, 1",
-        "phone": "+7 (928) 123-45-67",
+        "legalAddress": "г. Назрань, пр-т. И. Базоркина, д. 28 В",
+        "actualAddress": "г. Назрань, пр-т. И. Базоркина, д. 28 В",
+        "phone": "+7 (988) 822-28-88",
         "email": "info@rulplus.ru",
         "website": "https://rulplus.ru",
-        "founder": {
-            "name": "Иванов Иван Иванович",
-            "address": "г. Назрань, ул. Московская, 1",
-            "phone": "+7 (928) 123-45-67",
-            "email": "founder@rulplus.ru",
-            "website": "https://rulplus.ru"
-        },
-        "management": {
-            "director": {
-                "name": "Петров Петр Петрович",
-                "position": "Директор",
-                "phone": "+7 (928) 123-45-67",
-                "email": "director@rulplus.ru",
-                "workSchedule": "Пн-Пт: 9:00-18:00",
-                "receptionHours": "Пн-Пт: 9:00-18:00"
-            }
-        },
         "workSchedule": {
             "weekdays": "Пн-Пт: 9:00-18:00",
             "saturday": "Сб: 9:00-15:00",
@@ -73,8 +56,8 @@ const basicInfo = {
         "branches": [
             {
                 "name": "Главный офис",
-                "address": "г. Назрань, ул. Московская, 1",
-                "phone": "+7 (928) 123-45-67",
+                "address": "г. Назрань, пр-т. И. Базоркина, д. 28 В",
+                "phone": "+7 (988) 822-28-88",
                 "slogan": "СЕЛ — ПОЕХАЛ!"
             }
         ],
