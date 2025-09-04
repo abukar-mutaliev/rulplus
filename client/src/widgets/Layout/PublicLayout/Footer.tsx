@@ -155,7 +155,7 @@ export const Footer = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <LocationOn sx={{ fontSize: 20, color: 'grey.400' }} />
                 <Typography variant="body2" sx={{ color: 'grey.300' }}>
-                  г. Назрань, ул. Примерная, д. 123
+                  г. Назрань, пр-т. И. Базоркина, д. 28 В
                 </Typography>
               </Box>
               
@@ -166,7 +166,7 @@ export const Footer = () => {
                   color="inherit"
                   sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                 >
-                  <Typography variant="body2">+7 (928) 697-06-97</Typography>
+                  <Typography variant="body2">+7 (988) 822-28-88</Typography>
                 </Link>
               </Box>
               
@@ -177,7 +177,7 @@ export const Footer = () => {
                   color="inherit"
                   sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                 >
-                  <Typography variant="body2">amurklan@mail.ru</Typography>
+                  <Typography variant="body2">rulplus@mail.ru</Typography>
                 </Link>
               </Box>
               
@@ -222,10 +222,7 @@ export const Footer = () => {
               </IconButton>
             </Tooltip>
           </Box>
-          
-          {/*<Typography variant="body2" sx={{ color: 'grey.400' }}>*/}
-          {/*  Лицензия на образовательную деятельность № 123456 от 01.01.2025*/}
-          {/*</Typography>*/}
+
         </Box>
 
         <Box sx={{ mt: 2, textAlign: 'center' }}>

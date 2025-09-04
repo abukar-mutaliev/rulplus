@@ -1,4 +1,4 @@
-import { Container, Typography, Box, Card, CardContent, Grid, Button, Avatar, Paper, Chip, CircularProgress } from '@mui/material';
+import { Container, Typography, Box, Card, CardContent, Grid, Button, Avatar, Paper, CircularProgress } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -533,10 +533,10 @@ const HomePage = () => {
                   bgcolor: 'rgba(255,255,255,0.1)' 
                 }
               }}
-              href="tel:+79286970697"
+              href="tel:+7(988)822-28-88"
             >
               <Phone sx={{ mr: 1 }} />
-              +7 (928) 697-06-97
+                +7 (988) 822-28-88
             </Button>
           </Box>
         </Container>
@@ -553,7 +553,7 @@ const HomePage = () => {
                   Наш адрес
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  с. Экажево, ул. Осканова, д. 38
+                  г. Назрань, пр-т И. Базоркина, 28 В
                 </Typography>
               </Box>
             </Box>
@@ -566,7 +566,7 @@ const HomePage = () => {
                   Телефон
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  +7 (928) 697-06-97
+                  +7 (988) 822-28-88
                 </Typography>
               </Box>
             </Box>

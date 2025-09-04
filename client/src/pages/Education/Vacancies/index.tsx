@@ -124,7 +124,7 @@ const VacanciesPage = () => {
     ],
     contacts: {
       phone: '+7 (928) 697-06-97',
-      email: 'amurklan@mail.ru',
+      email: 'rulplus@mail.ru',
       address: '123456, г. Назрань, ул. Примерная, д. 123, оф. 45',
       workTime: 'Пн-Пт: 09:00-18:00, Сб: 10:00-16:00'
     }
