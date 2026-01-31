@@ -13,7 +13,6 @@ const StructurePage = lazy(() => import('../pages/Education/Structure'));
 const DocumentsPage = lazy(() => import('../pages/Education/Documents'));
 const ProgramsPage = lazy(() => import('../pages/Education/Programs'));
 const ServicesPage = lazy(() => import('../pages/Education/Services'));
-const StaffPage = lazy(() => import('../pages/Education/Staff'));
 const MaterialsPage = lazy(() => import('../pages/Education/Materials'));
 const VacanciesPage = lazy(() => import('../pages/Education/Vacancies'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
@@ -175,7 +174,6 @@ function App() {
                     <Route path="documents" element={<DocumentsPage />} />
                     <Route path="programs" element={<ProgramsPage />} />
                     <Route path="services" element={<ServicesPage />} />
-                    <Route path="staff" element={<StaffPage />} />
                     <Route path="materials" element={<MaterialsPage />} />
                     <Route path="vacancies" element={<VacanciesPage />} />
                   </Route>

@@ -39,7 +39,7 @@ const MaterialsPage = () => {
         id: 1,
         category: 'B',
         model: 'Lada Granta',
-        year: 2022,
+        year: 2024,
         count: 8,
         fuelType: 'Бензин',
         transmission: 'Механическая',
@@ -49,8 +49,8 @@ const MaterialsPage = () => {
       {
         id: 2,
         category: 'B',
-        model: 'Renault Logan',
-        year: 2021,
+        model: 'Lada Granta',
+        year: 2025,
         count: 5,
         fuelType: 'Бензин',
         transmission: 'Автоматическая',
@@ -339,60 +339,7 @@ const MaterialsPage = () => {
           </CardContent>
         </Card>
 
-        {/* Статистика */}
-        <Card>
-          <CardContent>
-            <Typography variant="h5" component="h2" gutterBottom>
-              Общая статистика материально-технической базы
-            </Typography>
-            
-            <Grid container spacing={3} sx={{ mt: 2 }}>
-              <Grid item xs={12} md={3}>
-                <Box sx={{ textAlign: 'center', p: 2, bgcolor: 'primary.light', borderRadius: 2 }}>
-                  <Typography variant="h3" color="primary.contrastText">
-                    {materialsData.facilities.reduce((sum, f) => sum + f.count, 0)}
-                  </Typography>
-                  <Typography variant="body1" color="primary.contrastText">
-                    Учебных помещений
-                  </Typography>
-                </Box>
-              </Grid>
-              
-              <Grid item xs={12} md={3}>
-                <Box sx={{ textAlign: 'center', p: 2, bgcolor: 'secondary.light', borderRadius: 2 }}>
-                  <Typography variant="h3" color="secondary.contrastText">
-                    {materialsData.vehicles.reduce((sum, v) => sum + v.count, 0)}
-                  </Typography>
-                  <Typography variant="body1" color="secondary.contrastText">
-                    Учебных автомобилей
-                  </Typography>
-                </Box>
-              </Grid>
-              
-              <Grid item xs={12} md={3}>
-                <Box sx={{ textAlign: 'center', p: 2, bgcolor: 'success.light', borderRadius: 2 }}>
-                  <Typography variant="h3" color="success.contrastText">
-                    {materialsData.facilities.reduce((sum, f) => sum + f.totalArea, 0)}
-                  </Typography>
-                  <Typography variant="body1" color="success.contrastText">
-                    м² общей площади
-                  </Typography>
-                </Box>
-              </Grid>
-              
-              <Grid item xs={12} md={3}>
-                <Box sx={{ textAlign: 'center', p: 2, bgcolor: 'info.light', borderRadius: 2 }}>
-                  <Typography variant="h3" color="info.contrastText">
-                    {materialsData.facilities.reduce((sum, f) => sum + f.capacity, 0)}
-                  </Typography>
-                  <Typography variant="body1" color="info.contrastText">
-                    Мест для обучения
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
+       
 
         {/* Дата обновления */}
         <Box sx={{ mt: 4, textAlign: 'center' }}>

@@ -7,7 +7,6 @@ const BasicInfoPage = lazy(() => import('@pages/Education/BasicInfo'));
 const StructurePage = lazy(() => import('@pages/Education/Structure'));
 const DocumentsPage = lazy(() => import('@pages/Education/Documents'));
 const EducationProgramsPage = lazy(() => import('@pages/Education/Programs'));
-const StaffPage = lazy(() => import('@pages/Education/Staff'));
 const MaterialsPage = lazy(() => import('@pages/Education/Materials'));
 const ServicesPage = lazy(() => import('@pages/Education/Services'));
 const VacanciesPage = lazy(() => import('@pages/Education/Vacancies'));
@@ -57,7 +56,6 @@ export const AppRouter = () => {
             <Route path="structure" element={<StructurePage />} />
             <Route path="documents" element={<DocumentsPage />} />
             <Route path="programs" element={<EducationProgramsPage />} />
-            <Route path="staff" element={<StaffPage />} />
             <Route path="materials" element={<MaterialsPage />} />
             <Route path="services" element={<ServicesPage />} />
             <Route path="vacancies" element={<VacanciesPage />} />

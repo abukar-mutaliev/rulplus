@@ -47,7 +47,6 @@ export const Header = () => {
     { label: 'Структура и органы управления', path: '/education/structure' },
     { label: 'Документы', path: '/education/documents' },
     { label: 'Образование', path: '/education/programs' },
-    { label: 'Руководство. Педагогический состав', path: '/education/staff' },
     { label: 'Материально-техническое обеспечение', path: '/education/materials' },
     { label: 'Платные образовательные услуги', path: '/education/services' },
     { label: 'Вакантные места для приема', path: '/education/vacancies' },
