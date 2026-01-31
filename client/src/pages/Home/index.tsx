@@ -16,6 +16,12 @@ import {
 
 // Импорт API и типов
 import { servicesApi, IMainService } from '../../shared/api/servicesApi';
+import {
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  CONTACT_TELEGRAM_URL,
+  CONTACT_WHATSAPP_URL,
+} from '../../shared/constants/contact';
 
 // Импорт изображения офиса
 import homePageImage from '../../assets/homePage.jpeg';
@@ -245,23 +251,23 @@ const HomePage = () => {
                 >
                   Выбрать программу
                 </Button>
-                <Button 
-                  variant="outlined" 
+                <Button
+                  variant="outlined"
                   size="large"
-                  sx={{ 
-                    borderColor: 'white', 
+                  sx={{
+                    borderColor: 'white',
                     color: 'white',
                     px: 4,
                     py: 1.5,
                     fontSize: '1.1rem',
                     fontWeight: 600,
-                    '&:hover': { 
-                      borderColor: 'primary.main', 
+                    '&:hover': {
+                      borderColor: 'primary.main',
                       color: 'primary.main',
-                      bgcolor: 'rgba(220, 53, 69, 0.1)' 
-                    }
+                      bgcolor: 'rgba(220, 53, 69, 0.1)',
+                    },
                   }}
-                  href="tel:+79286970697"
+                  href={`tel:${CONTACT_PHONE_TEL}`}
                 >
                   <Phone sx={{ mr: 1 }} />
                   Позвонить
@@ -412,8 +418,8 @@ const HomePage = () => {
                       <Typography variant="h5" color="primary.main" fontWeight="bold">
                         {program.cost.toLocaleString('ru-RU')} ₽
                       </Typography>
-                      <Button variant="contained" component={Link} to="/education/vacancies">
-                        Записаться
+                      <Button variant="outlined" href={`tel:${CONTACT_PHONE_TEL}`}>
+                        Позвонить
                       </Button>
                     </Box>
                   </CardContent>
@@ -500,43 +506,64 @@ const HomePage = () => {
             СЕЛ — ПОЕХАЛ! Свяжитесь с нами сегодня и сделайте первый шаг к получению водительских прав
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button 
-              variant="contained" 
+            <Button
+              variant="contained"
               size="large"
-              sx={{ 
-                bgcolor: 'white', 
+              sx={{
+                bgcolor: 'white',
                 color: 'primary.main',
                 px: 4,
                 py: 1.5,
                 fontWeight: 700,
-                '&:hover': { 
+                '&:hover': {
                   bgcolor: 'grey.100',
-                  boxShadow: '0 6px 20px rgba(255,255,255,0.3)'
-                }
+                  boxShadow: '0 6px 20px rgba(255,255,255,0.3)',
+                },
               }}
-              component={Link}
-              to="/education/vacancies"
+              href={`tel:${CONTACT_PHONE_TEL}`}
             >
-              Записаться на обучение
+              <Phone sx={{ mr: 1 }} />
+              Позвонить
             </Button>
-            <Button 
-              variant="outlined" 
+            <Button
+              variant="outlined"
               size="large"
-              sx={{ 
-                borderColor: 'white', 
+              sx={{
+                borderColor: 'white',
                 color: 'white',
                 px: 4,
                 py: 1.5,
                 fontWeight: 600,
-                '&:hover': { 
-                  borderColor: 'white', 
-                  bgcolor: 'rgba(255,255,255,0.1)' 
-                }
+                '&:hover': {
+                  borderColor: 'white',
+                  bgcolor: 'rgba(255,255,255,0.1)',
+                },
               }}
-              href="tel:+7(988)822-28-88"
+              href={CONTACT_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Phone sx={{ mr: 1 }} />
-                +7 (988) 822-28-88
+              WhatsApp
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              sx={{
+                borderColor: 'white',
+                color: 'white',
+                px: 4,
+                py: 1.5,
+                fontWeight: 600,
+                '&:hover': {
+                  borderColor: 'white',
+                  bgcolor: 'rgba(255,255,255,0.1)',
+                },
+              }}
+              href={CONTACT_TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Telegram
             </Button>
           </Box>
         </Container>
@@ -566,7 +593,7 @@ const HomePage = () => {
                   Телефон
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  +7 (988) 822-28-88
+                  {CONTACT_PHONE_DISPLAY}
                 </Typography>
               </Box>
             </Box>

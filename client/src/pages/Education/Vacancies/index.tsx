@@ -2,12 +2,15 @@ import { Container, Typography, Box, Card, CardContent, Grid, Table, TableBody, 
 import { Helmet } from 'react-helmet-async';
 import { People, EventNote, School, TrendingUp, CheckCircle, Phone } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
-import ApplicationForm from './ApplicationForm';
 import { servicesApi, IMainService } from '../../../shared/api/servicesApi';
+import {
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  CONTACT_TELEGRAM_URL,
+  CONTACT_WHATSAPP_URL,
+} from '../../../shared/constants/contact';
 
 const VacanciesPage = () => {
-  const [applicationFormOpen, setApplicationFormOpen] = useState(false);
-  const [selectedProgram, setSelectedProgram] = useState<any>(null);
   const [programs, setPrograms] = useState<IMainService[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -123,11 +126,8 @@ const VacanciesPage = () => {
       'Начало обучения согласно расписанию'
     ],
     contacts: {
-      phone: '+7 (928) 697-06-97',
-      email: 'rulplus@mail.ru',
-      address: 'г. Назрань, пр-т. И. Базоркина, д. 28 В',
-      workTime: 'Пн-Пт: 09:00-18:00, Сб: 10:00-16:00'
-    }
+      phone: CONTACT_PHONE_DISPLAY,
+    },
   };
 
   const getOccupancyColor = (vacantPlaces: number, totalPlaces: number) => {
@@ -139,16 +139,6 @@ const VacanciesPage = () => {
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('ru-RU');
-  };
-
-  const handleApplyForTraining = (program: any) => {
-    setSelectedProgram(program);
-    setApplicationFormOpen(true);
-  };
-
-  const handleCloseApplicationForm = () => {
-    setApplicationFormOpen(false);
-    setSelectedProgram(null);
   };
 
   if (loading) {
@@ -274,14 +264,14 @@ const VacanciesPage = () => {
                     ))}
                   </Box>
 
-                  <Button 
-                    variant="contained" 
-                    fullWidth 
+                  <Button
+                    variant="outlined"
+                    fullWidth
                     disabled={program.vacantPlaces === 0}
                     sx={{ mt: 'auto' }}
-                    onClick={() => handleApplyForTraining(program)}
+                    href={`tel:${CONTACT_PHONE_TEL}`}
                   >
-                    {program.vacantPlaces > 0 ? 'Записаться на обучение' : 'Места закончились'}
+                    {program.vacantPlaces > 0 ? 'Позвонить и уточнить' : 'Места закончились'}
                   </Button>
                 </CardContent>
               </Card>
@@ -377,39 +367,26 @@ const VacanciesPage = () => {
               </Typography>
             </Box>
 
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6}>
-                <Typography variant="body1" gutterBottom>
-                  <strong>Телефон приемной комиссии:</strong>
-                </Typography>
-                <Typography variant="h6" color="primary" gutterBottom>
-                  {vacanciesData.contacts.phone}
-                </Typography>
+            <Box sx={{ mb: 2 }}>
+              <Typography variant="body1" gutterBottom>
+                <strong>Телефон автошколы:</strong>
+              </Typography>
+              <Typography variant="h6" color="primary" gutterBottom>
+                {vacanciesData.contacts.phone}
+              </Typography>
+            </Box>
 
-                <Typography variant="body1" gutterBottom>
-                  <strong>Электронная почта:</strong>
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                  {vacanciesData.contacts.email}
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12} md={6}>
-                <Typography variant="body1" gutterBottom>
-                  <strong>Адрес:</strong>
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                  {vacanciesData.contacts.address}
-                </Typography>
-
-                <Typography variant="body1" gutterBottom>
-                  <strong>Время работы приемной комиссии:</strong>
-                </Typography>
-                <Typography variant="body1">
-                  {vacanciesData.contacts.workTime}
-                </Typography>
-              </Grid>
-            </Grid>
+            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+              <Button variant="contained" href={`tel:${CONTACT_PHONE_TEL}`}>
+                Позвонить
+              </Button>
+              <Button variant="outlined" href={CONTACT_WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </Button>
+              <Button variant="outlined" href={CONTACT_TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+                Telegram
+              </Button>
+            </Box>
 
             <Alert severity="success" sx={{ mt: 3 }}>
               <Typography variant="body2">
@@ -427,13 +404,6 @@ const VacanciesPage = () => {
           </Typography>
         </Box>
       </Container>
-
-      {/* Application Form Dialog */}
-      <ApplicationForm
-        open={applicationFormOpen}
-        onClose={handleCloseApplicationForm}
-        program={selectedProgram}
-      />
     </>
   );
 };

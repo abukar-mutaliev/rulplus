@@ -7,11 +7,11 @@ import {
   Grid,
   Paper,
   Divider,
+  Button,
   Link as MuiLink
 } from '@mui/material';
 import {
   Phone,
-  Email,
   LocationOn,
   Business,
   AccountBalance,
@@ -19,6 +19,12 @@ import {
   Info
 } from '@mui/icons-material';
 import { Helmet } from 'react-helmet-async';
+import {
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  CONTACT_TELEGRAM_URL,
+  CONTACT_WHATSAPP_URL,
+} from '../../shared/constants/contact';
 
 const ContactsPage = () => {
   const companyInfo = {
@@ -28,8 +34,7 @@ const ContactsPage = () => {
     slogan: 'СЕЛ — ПОЕХАЛ',
     legalAddress: '386151, РЕСПУБЛИКА ИНГУШЕТИЯ, М.Р-Н НАЗРАНОВСКИЙ, С.П. ЭКАЖЕВО, С ЭКАЖЕВО, УЛ ОСКАНОВА, Д. 38',
     postalAddress: '386151, РЕСПУБЛИКА ИНГУШЕТИЯ, М.Р-Н НАЗРАНОВСКИЙ, С.П. ЭКАЖЕВО, С ЭКАЖЕВО, УЛ ОСКАНОВА, Д. 38',
-    phone: '+7 928 697 0697',
-    email: 'rulplus@mail.ru',
+    phone: CONTACT_PHONE_DISPLAY,
     inn: '0600020231',
     kpp: '060001001',
     ogrn: '1250600001794 от 23.05.2025',
@@ -78,23 +83,26 @@ const ContactsPage = () => {
 
                 <Box sx={{ mb: 3 }}>
                   <Typography variant="h6" fontWeight="bold" gutterBottom>
-                    Контактные данные
+                    Связь с автошколой
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                     <Phone sx={{ mr: 1, color: 'primary.main' }} />
                     <Typography variant="body1">
-                      <MuiLink href={`tel:${companyInfo.phone}`} color="inherit">
+                      <MuiLink href={`tel:${CONTACT_PHONE_TEL}`} color="inherit">
                         {companyInfo.phone}
                       </MuiLink>
                     </Typography>
                   </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                    <Email sx={{ mr: 1, color: 'primary.main' }} />
-                    <Typography variant="body1">
-                      <MuiLink href={`mailto:${companyInfo.email}`} color="inherit">
-                        {companyInfo.email}
-                      </MuiLink>
-                    </Typography>
+                  <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                    <Button variant="contained" href={`tel:${CONTACT_PHONE_TEL}`}>
+                      Позвонить
+                    </Button>
+                    <Button variant="outlined" href={CONTACT_WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                      WhatsApp
+                    </Button>
+                    <Button variant="outlined" href={CONTACT_TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+                      Telegram
+                    </Button>
                   </Box>
                 </Box>
 

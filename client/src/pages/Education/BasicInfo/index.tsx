@@ -99,7 +99,7 @@ const BasicInfoPage = () => {
                     Дата создания образовательной организации:
                   </Typography>
                   <Typography variant="body1">
-                    {basicInfo.foundedDate}
+                    01.01.2025
                   </Typography>
                 </Box>
               </CardContent>
@@ -120,14 +120,14 @@ const BasicInfoPage = () => {
                     Юридический адрес:
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 2 }}>
-                    {basicInfo.legalAddress}
+                  г. Назрань, пр-т. И. Базоркина, д. 28 В
                   </Typography>
 
                   <Typography variant="h6" gutterBottom>
                     Фактический адрес:
                   </Typography>
                   <Typography variant="body1">
-                    {basicInfo.actualAddress}
+                  г. Назрань, пр-т. И. Базоркина, д. 28 В
                   </Typography>
                 </Box>
               </CardContent>
@@ -152,7 +152,7 @@ const BasicInfoPage = () => {
                           Телефон:
                         </Typography>
                         <Typography variant="body1">
-                          {basicInfo.phone}
+                        +7 (988) 822-28-88
                         </Typography>
                       </Box>
                     </Box>
@@ -166,7 +166,7 @@ const BasicInfoPage = () => {
                           Электронная почта:
                         </Typography>
                         <Typography variant="body1">
-                          {basicInfo.email}
+                        rulplus@mail.ru
                         </Typography>
                       </Box>
                     </Box>
