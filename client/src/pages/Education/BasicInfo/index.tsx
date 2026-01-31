@@ -81,14 +81,14 @@ const BasicInfoPage = () => {
                     Полное наименование:
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 2 }}>
-                    {basicInfo.fullName}
+                  Общество с ограниченной ответственностью "Джабраил"
                   </Typography>
                   
                   <Typography variant="h6" gutterBottom>
                     Сокращенное наименование:
                   </Typography>
                   <Typography variant="body1">
-                    {basicInfo.shortName}
+                  Сокращенное наименование: ООО "Джабраил"
                   </Typography>
                 </Box>
 
@@ -120,14 +120,14 @@ const BasicInfoPage = () => {
                     Юридический адрес:
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 2 }}>
-                  г. Назрань, пр-т. И. Базоркина, д. 28 В
+                  386151, РЕСПУБЛИКА ИНГУШЕТИЯ, М.Р-Н НАЗРАНОВСКИЙ, С.П. ЭКАЖЕВО, С ЭКАЖЕВО, УЛ ОСКАНОВА, Д. 38
                   </Typography>
 
                   <Typography variant="h6" gutterBottom>
                     Фактический адрес:
                   </Typography>
                   <Typography variant="body1">
-                  г. Назрань, пр-т. И. Базоркина, д. 28 В
+                  386151, РЕСПУБЛИКА ИНГУШЕТИЯ, М.Р-Н НАЗРАНОВСКИЙ, С.П. ЭКАЖЕВО, С ЭКАЖЕВО, УЛ ОСКАНОВА, Д. 38
                   </Typography>
                 </Box>
               </CardContent>
